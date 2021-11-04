@@ -1,1 +1,18 @@
 // Generic – reset and/or normalize styles, box-sizing definition, etc. It is important to note that this is the first layer of the triangle that generates CSS.
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: $fontType;
+}
+
+html {
+  background: $bodyColorPrimary;
+}
+body {
+  min-height: 100vh;
+  position: relative;
+  background: $colorPrimary;
+  color: $fontColorPrimary;
+}
