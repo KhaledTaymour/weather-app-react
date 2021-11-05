@@ -6,3 +6,5 @@ import status from "./statusReducer";
 const reducer = combineReducers({ weather, city, status });
 
 export default reducer;
+
+export type RootState = ReturnType<typeof reducer>;
