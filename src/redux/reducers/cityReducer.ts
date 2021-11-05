@@ -1,6 +1,6 @@
 import { fillDataEnum } from "enums";
 import cityInterface from "interfaces/cityInterface";
-import { actionDispactchTypes } from "redux/actionTypes";
+import { actionDispatchTypes } from "redux/actionTypes";
 
 const initialState: cityInterface = {
   name: "",
@@ -12,7 +12,7 @@ const initialState: cityInterface = {
 
 const cityReducer = (
   state: cityInterface = initialState,
-  action: actionDispactchTypes
+  action: actionDispatchTypes
 ): cityInterface => {
   switch (action.type) {
     case fillDataEnum.FILL_CITY:

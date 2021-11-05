@@ -24,7 +24,7 @@ interface fillCityActionType {
   payload: cityInterface;
 }
 
-export type actionDispactchTypes =
+export type actionDispatchTypes =
   | statusLoadingActionType
   | statusFailActionType
   | statusSuccessActionType

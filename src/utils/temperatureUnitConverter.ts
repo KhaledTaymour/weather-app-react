@@ -1,11 +1,19 @@
-const convertTemperatureFromKelvinToCelsius = (k: number): number => {
-  return +(k - 273.15).toFixed(0);
+export const convertTemperatureFromKelvinToCelsius = (k: number): string => {
+  return Math.round(k - 273.15) + "";
 };
 
-export const prepareTemperatureObject = (hourTempMain: any) => {
+export interface preparedTemperatureObjectInterface {
+  temp: string;
+  tempMax: string;
+  tempMin: string;
+}
+
+export const prepareTemperatureObject = (
+  hourTempMain: any
+): preparedTemperatureObjectInterface => {
   return {
-    temp: convertTemperatureFromKelvinToCelsius(hourTempMain.temp),
-    tempMax: convertTemperatureFromKelvinToCelsius(hourTempMain.temp_max),
-    tempMin: convertTemperatureFromKelvinToCelsius(hourTempMain.temp_min),
+    temp: convertTemperatureFromKelvinToCelsius(hourTempMain?.temp),
+    tempMax: convertTemperatureFromKelvinToCelsius(hourTempMain?.temp_max),
+    tempMin: convertTemperatureFromKelvinToCelsius(hourTempMain?.temp_min),
   };
 };

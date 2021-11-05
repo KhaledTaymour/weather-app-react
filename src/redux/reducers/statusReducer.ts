@@ -1,5 +1,5 @@
 import { statusEnum } from "enums";
-import { actionDispactchTypes } from "redux/actionTypes";
+import { actionDispatchTypes } from "redux/actionTypes";
 
 type statusType = statusEnum.LOADING | statusEnum.FAIL | statusEnum.SUCCESS;
 
@@ -7,7 +7,7 @@ const initialState: statusType = statusEnum.LOADING;
 
 const statusReducer = (
   state: statusType = initialState,
-  action: actionDispactchTypes
+  action: actionDispatchTypes
 ): statusType => {
   switch (action.type) {
     case statusEnum.LOADING:
