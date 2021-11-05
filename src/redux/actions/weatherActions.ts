@@ -1,5 +1,5 @@
 import { Dispatch } from "redux";
-import { actionDispactchTypes } from "redux/actionTypes";
+import { actionDispatchTypes } from "redux/actionTypes";
 import axios from "axios";
 import config from "configs/app.config.json";
 import { fillDataEnum, statusEnum } from "enums";
@@ -21,7 +21,7 @@ const prepareHourTempObject = (hourTemp: any) => {
 };
 
 export const getTemperature =
-  () => async (dispatch: Dispatch<actionDispactchTypes>) => {
+  () => async (dispatch: Dispatch<actionDispatchTypes>) => {
     try {
       // status - LOADING
       dispatch({
