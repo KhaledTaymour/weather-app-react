@@ -1,10 +1,7 @@
 import "./App.scss";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { getTemperature } from "redux/actions/weatherActions";
 
-import { useEffect } from "react";
-import { useDispatch } from "react-redux";
 import { ErrorBoundary } from "react-error-boundary";
 // components
 import CurrentWeather from "components/currentWeather/CurrentWeather";
