@@ -1,1 +1,16 @@
 @import "assets/style/main.scss";
+
+.App {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  main {
+    height: 100%;
+
+    display: grid;
+    justify-content: center;
+    align-items: center;
+  }
+}
