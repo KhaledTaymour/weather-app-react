@@ -116,7 +116,9 @@ Used the given 2 icons "clouds" and "clear" and added another one "rain". In a r
 
 ### Deployed Version:
 
-//TODO:
+Deployed via github pages:
+
+https://KhaledTaymour.github.io/weather-app-react
 
 ### Available Scripts
 
