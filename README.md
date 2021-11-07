@@ -31,7 +31,6 @@ Used BEM ([Block Element Modifier](http://getbem.com/naming/)). only used settin
 ### File Structure
 
 ![](https://github.com/KhaledTaymour/weather-app-react/blob/master/src/assets/images/screenshots/0.folder-structure.PNG?raw=true)
-![](https://github.com/KhaledTaymour/weather-app-react/tree/master/src/assets/images/screenshots/4.data.png?raw=true)
 
 #### Styles:
 
