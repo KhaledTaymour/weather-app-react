@@ -1,0 +1,150 @@
+@import "../../assets/style/ITCSS/_00-settings";
+@import "../../assets/style/ITCSS/01-tools";
+
+.current-weather-container {
+  width: 100%;
+  height: 21.5rem;
+
+  /* Layout */
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr 4fr 1fr 5fr 1fr;
+  grid-template-areas: "spc icn spc tmp spc inf spc";
+  column-gap: 1rem;
+  padding: 0 1rem 0 1rem;
+
+  &__icon-container {
+    grid-area: "icn";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__icon {
+    fill: #ffc700;
+
+    width: 100%;
+    height: auto;
+  }
+
+  &__temperature {
+    grid-area: "tmp";
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+    grid-template-rows: 3.5rem 16rem;
+    grid-template-areas:
+      "cnd max-min"
+      "crnt crnt";
+    gap: 2rem;
+  }
+  &__condition {
+    grid-area: cnd;
+    justify-self: left;
+    height: 100%;
+
+    @include basicInfoSmallText();
+  }
+  &__max-min {
+    grid-area: max-min;
+    justify-self: right;
+
+    @include basicInfoSmallText();
+  }
+  &__current {
+    grid-area: crnt;
+
+    /* layout */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    top: 17.04%;
+
+    @include basicInfoSmallText();
+    font-size: 14.81rem;
+    line-height: 15.38rem;
+    font-weight: bold;
+    color: $fontColorPrimary;
+  }
+
+  &__info {
+    grid-area: "inf";
+
+    display: grid;
+    grid-template-rows: 3.5rem 16rem;
+    grid-template-areas:
+      "city"
+      "date";
+    gap: 2rem;
+  }
+  &__city {
+    grid-area: city;
+    @include basicInfoSmallText();
+  }
+  &__date {
+    @include basicInfoSmallText();
+
+    grid-area: date;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    font-size: 5.1rem;
+    line-height: 6.9rem;
+    font-weight: bold;
+    color: $fontColorPrimary;
+  }
+
+  &__gap {
+    grid-area: "spc";
+  }
+
+  /* iPad Landscape */
+  @media all and (min-width: 481px) and (max-width: 1200px) and (max-height: 768px) and (orientation: landscape) {
+    grid-template-columns: 3fr 4fr 5fr;
+    grid-template-areas: " icn  tmp  inf ";
+    column-gap: 3rem;
+    padding: 0 1rem 0 3rem;
+
+    &__icon {
+      width: 90%;
+      height: auto;
+    }
+
+    &__gap {
+      display: none;
+    }
+  }
+
+  /* iphone */
+  @media screen and (max-width: 480px) and (orientation: portrait) {
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 3rem;
+    row-gap: 3rem;
+    padding: 0 1rem 0 3rem;
+    grid-template-areas:
+      "icn tmp tmp"
+      "inf inf inf";
+
+    &__icon-container {
+      grid-area: icn;
+    }
+    &__temperature {
+      grid-area: tmp;
+    }
+    &__info {
+      grid-area: inf;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &__gap {
+      display: none;
+    }
+
+    &__condition,
+    &__max-min,
+    &__city {
+      font-size: 5rem;
+    }
+  }
+}

@@ -1,0 +1,28 @@
+.scroll-container {
+  display: flex;
+  flex-wrap: nowrap;
+
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  // scroll-snap-type: x proximity;
+
+  // hide scrollbar
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  -ms-overflow-style: none; /* IE 11 */
+  scrollbar-width: none; /* Firefox 64 */
+
+  .item {
+    flex: 0 0 auto;
+    color: blue;
+    padding: 2px;
+
+    scroll-snap-align: start;
+  }
+
+  /* iphone */
+  @media screen and (max-width: 480px) and (orientation: portrait) {
+    align-self: flex-end;
+  }
+}
