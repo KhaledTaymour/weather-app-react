@@ -22,15 +22,16 @@ Used BEM ([Block Element Modifier](http://getbem.com/naming/)). only used settin
 
 ### Planning
 
-| \_\_       | \_\_                                                                                                                                  |
-| ---------- | ------------------------------------------------------------------------------------------------------------------------------------- |
-| Components | ![Components](https://github.com/KhaledTaymour/weather-app-react/tree/master/src/assets/images/screenshots/2.components.png?raw=true) |
-| Events     | ![events](https://github.com/KhaledTaymour/weather-app-react/tree/master/src/assets/images/screenshots/3.events.png?raw=true)         |
-| Data       | ![data](https://github.com/KhaledTaymour/weather-app-react/tree/master/src/assets/images/screenshots/4.data.png?raw=true)             |
+| \_\_       | \_\_                                                                                                                        |
+| ---------- | --------------------------------------------------------------------------------------------------------------------------- |
+| Components | ![](https://github.com/KhaledTaymour/weather-app-react/tree/master/src/assets/images/screenshots/2.components.png?raw=true) |
+| Events     | ![](https://github.com/KhaledTaymour/weather-app-react/tree/master/src/assets/images/screenshots/3.events.png?raw=true)     |
+| Data       | ![](https://github.com/KhaledTaymour/weather-app-react/tree/master/src/assets/images/screenshots/4.data.png?raw=true)       |
 
 ### File Structure
 
-![File Structure](https://github.com/KhaledTaymour/weather-app-react/tree/master/src/assets/images/screenshots/4.data.png?raw=true)
+![](https://github.com/KhaledTaymour/weather-app-react/blob/master/src/assets/images/screenshots/0.folder-structure.PNG?raw=true)
+![](https://github.com/KhaledTaymour/weather-app-react/tree/master/src/assets/images/screenshots/4.data.png?raw=true)
 
 #### Styles:
 
