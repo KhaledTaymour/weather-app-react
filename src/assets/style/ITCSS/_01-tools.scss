@@ -1,1 +1,13 @@
 // Tools – globally used mixins and functions. This layer is only used if we use a preprocessor as SASS.
+
+@import "./_00-settings";
+
+@mixin basicInfoSmallText() {
+  /* font */
+  font-family: $fontType;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 2.5rem;
+  line-height: 3rem;
+  color: $fontColorSecondary;
+}

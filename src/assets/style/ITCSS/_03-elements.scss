@@ -1,1 +1,7 @@
 // Elements – styling for bare HTML elements (like H1, A, header, footer, ...). These come with default styling from the browser so we must to redefine them here.
+
+/* Add the max-width in css to avoid overflow, and keep aspect ratio */
+image {
+  max-width: 100%;
+  height: auto;
+}
