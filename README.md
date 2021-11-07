@@ -22,11 +22,11 @@ Used BEM ([Block Element Modifier](http://getbem.com/naming/)). only used settin
 
 ### Planning
 
-| \_\_       | \_\_                                                                                                                        |
-| ---------- | --------------------------------------------------------------------------------------------------------------------------- |
-| Components | ![](https://github.com/KhaledTaymour/weather-app-react/tree/master/src/assets/images/screenshots/2.components.png?raw=true) |
-| Events     | ![](https://github.com/KhaledTaymour/weather-app-react/tree/master/src/assets/images/screenshots/3.events.png?raw=true)     |
-| Data       | ![](https://github.com/KhaledTaymour/weather-app-react/tree/master/src/assets/images/screenshots/4.data.png?raw=true)       |
+|            |                                                                                                                                       |
+| ---------- | ------------------------------------------------------------------------------------------------------------------------------------- |
+| Components | ![Components](https://github.com/KhaledTaymour/weather-app-react/tree/master/src/assets/images/screenshots/2.components.png?raw=true) |
+| Events     | ![Events](https://github.com/KhaledTaymour/weather-app-react/tree/master/src/assets/images/screenshots/3.events.png?raw=true)         |
+| Data       | ![Data](https://github.com/KhaledTaymour/weather-app-react/tree/master/src/assets/images/screenshots/4.data.png?raw=true)             |
 
 ### File Structure
 
