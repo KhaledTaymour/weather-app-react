@@ -1,0 +1,123 @@
+@import "../../assets/style/ITCSS/_00-settings";
+
+.card {
+  position: relative;
+  width: 212px;
+  height: 400px;
+  // border: 1px solid red;
+
+  /* Layout */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 6px;
+  // transition: all 300ms cubic-bezier(0.08, 0.73, 0, 0.71);
+
+  &:hover {
+    /* Indigo / 80 */
+    background: $cardColorFocus;
+    cursor: pointer;
+  }
+
+  &:active,
+  &.active {
+    /* Indigo / 70 */
+    background: $cardColorActive;
+  }
+
+  &.glow {
+    background-color: black;
+    border: 2px solid blue;
+    border-radius: unset;
+  }
+
+  &__hour {
+    width: 100%;
+    height: 120px;
+
+    /* Layout */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    // font
+    font-family: $fontType;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 47.78px;
+    line-height: 56px;
+
+    // color
+    /* Indigo / 30 */
+    color: #a8aabd;
+  }
+
+  &__condition {
+    /* Layout */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__svg {
+    fill: #ffc700;
+    width: 120px;
+    height: auto;
+  }
+
+  &__temperature {
+    width: 100%;
+    height: 160px;
+
+    // font
+    font-family: $fontType;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 82.556px;
+    line-height: 96px;
+
+    /* Layout */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    // color
+    color: $fontColorPrimary;
+  }
+
+  &__cover {
+    opacity: 0%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0e73aa;
+    border: 3px solid #2ab4ff;
+    border-radius: unset;
+    transition: opacity 300ms cubic-bezier(0.08, 0.73, 0, 0.71);
+
+    &.show {
+      opacity: 50%;
+    }
+  }
+
+  /* iphone */
+  @media screen and (max-width: 480px) and (orientation: portrait) {
+    height: 300px;
+
+    &__hour {
+      font-size: 10rem;
+      line-height: 11rem;
+    }
+    &__temperature {
+      font-size: 12rem;
+      line-height: 13rem;
+    }
+  }
+
+  @media screen and (min-width: 481px) and (max-width: 1400px) {
+    height: 350px;
+  }
+}
