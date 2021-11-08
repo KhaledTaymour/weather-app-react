@@ -114,12 +114,6 @@ Used the given 2 icons "clouds" and "clear" and added another one "rain". In a r
 
 - Added a `proxy` in `package.json` as it's only one api from one domain is being called.
 
-### Deployed Version:
-
-Deployed via github pages:
-
-https://KhaledTaymour.github.io/weather-app-react
-
 ### Available Scripts
 
 In the project directory, you can run:
