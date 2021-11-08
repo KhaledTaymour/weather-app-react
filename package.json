@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "homepage": "https://KhaledTaymour.github.io/weather-app-react",
   "private": true,
-  "proxy": "https://samples.openweathermap.org",
   "dependencies": {
     "@types/jest": "^26.0.24",
     "@testing-library/jest-dom": "^5.15.0",

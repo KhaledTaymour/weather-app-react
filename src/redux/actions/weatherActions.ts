@@ -37,50 +37,57 @@ export const getTemperature =
       try {
         const { data } = await getTemperatureFromOpenWeatherMap();
 
-        // city
-        const city: cityInterface = {
-          name: data.city.name,
-          coord: {
-            lat: data.city.coord.lat,
-            lon: data.city.coord.lon,
-          },
-        };
-        dispatch({
-          type: fillDataEnum.FILL_CITY,
-          payload: city,
-        });
-
-        // weather list
-        let selectedCardDt: number = 0;
-        const weatherDictionary: weatherDictionaryInterface = data.list.reduce(
-          (
-            acc: weatherDictionaryInterface,
-            hourTemp: HourTempInterface,
-            i: number
-          ) => {
-            const formattedTemperatureObject = prepareHourTempObject(
-              hourTemp,
-              i === 0 ? true : false
-            );
-            if (i === 0) selectedCardDt = hourTemp.dt;
-            return (acc[hourTemp.dt] = formattedTemperatureObject), acc;
-          },
-          {}
-        );
-        if (selectedCardDt) {
-          dispatch({
-            type: fillDataEnum.FILL_TEMP,
-            payload: {
-              weatherDictionary,
-              selectedCardDt,
+        if (data?.city) {
+          // city
+          const city: cityInterface = {
+            name: data.city.name,
+            coord: {
+              lat: data.city.coord.lat,
+              lon: data.city.coord.lon,
             },
+          };
+          dispatch({
+            type: fillDataEnum.FILL_CITY,
+            payload: city,
+          });
+
+          // weather list
+          let selectedCardDt: number = 0;
+          const weatherDictionary: weatherDictionaryInterface =
+            data.list.reduce(
+              (
+                acc: weatherDictionaryInterface,
+                hourTemp: HourTempInterface,
+                i: number
+              ) => {
+                const formattedTemperatureObject = prepareHourTempObject(
+                  hourTemp,
+                  i === 0 ? true : false
+                );
+                if (i === 0) selectedCardDt = hourTemp.dt;
+                return (acc[hourTemp.dt] = formattedTemperatureObject), acc;
+              },
+              {}
+            );
+          if (selectedCardDt) {
+            dispatch({
+              type: fillDataEnum.FILL_TEMP,
+              payload: {
+                weatherDictionary,
+                selectedCardDt,
+              },
+            });
+          }
+
+          // status - SUCCESS
+          dispatch({
+            type: statusEnum.SUCCESS,
+          });
+        } else {
+          dispatch({
+            type: statusEnum.FAIL,
           });
         }
-
-        // status - SUCCESS
-        dispatch({
-          type: statusEnum.SUCCESS,
-        });
       } catch (error) {
         console.log(error);
         dispatch({
