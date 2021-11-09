@@ -113,6 +113,7 @@ Used the given 2 icons "clouds" and "clear" and added another one "rain". In a r
 ### CORS solution implementation
 
 - Added a `proxy` in `package.json` as it's only one api from one domain is being called.
+- The deployed version can be accessed via https://khaledtaymour.github.io/weather-app-react/ with enabling the allow-cors extension on chrome https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf?hl=en
 
 ### Available Scripts
 
