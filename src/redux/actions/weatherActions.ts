@@ -28,74 +28,69 @@ const prepareHourTempObject = (
 
 export const getTemperature =
   () => async (dispatch: Dispatch<actionDispatchTypes>) => {
+    // status - LOADING
+    dispatch({
+      type: statusEnum.LOADING,
+    });
+
     try {
-      // status - LOADING
-      dispatch({
-        type: statusEnum.LOADING,
-      });
+      const { data } = await getTemperatureFromOpenWeatherMap();
 
-      try {
-        const { data } = await getTemperatureFromOpenWeatherMap();
+      if (data?.city) {
+        // city
+        const city: cityInterface = {
+          name: data.city.name,
+          coord: {
+            lat: data.city.coord.lat,
+            lon: data.city.coord.lon,
+          },
+        };
+        dispatch({
+          type: fillDataEnum.FILL_CITY,
+          payload: city,
+        });
 
-        if (data?.city) {
-          // city
-          const city: cityInterface = {
-            name: data.city.name,
-            coord: {
-              lat: data.city.coord.lat,
-              lon: data.city.coord.lon,
-            },
-          };
-          dispatch({
-            type: fillDataEnum.FILL_CITY,
-            payload: city,
-          });
-
-          // weather list
-          let selectedCardDt: number = 0;
-          const weatherDictionary: weatherDictionaryInterface =
-            data.list.reduce(
-              (
-                acc: weatherDictionaryInterface,
-                hourTemp: HourTempInterface,
-                i: number
-              ) => {
-                const formattedTemperatureObject = prepareHourTempObject(
-                  hourTemp,
-                  i === 0 ? true : false
-                );
-                if (i === 0) selectedCardDt = hourTemp.dt;
-                return (acc[hourTemp.dt] = formattedTemperatureObject), acc;
-              },
-              {}
+        // weather list
+        let selectedCardDt: number = 0;
+        const weatherDictionary: weatherDictionaryInterface = data.list.reduce(
+          (
+            acc: weatherDictionaryInterface,
+            hourTemp: HourTempInterface,
+            i: number
+          ) => {
+            const formattedTemperatureObject = prepareHourTempObject(
+              hourTemp,
+              i === 0 ? true : false
             );
-          if (selectedCardDt) {
-            dispatch({
-              type: fillDataEnum.FILL_TEMP,
-              payload: {
-                weatherDictionary,
-                selectedCardDt,
-              },
-            });
-          }
-
-          // status - SUCCESS
+            if (i === 0) selectedCardDt = hourTemp.dt;
+            return (acc[hourTemp.dt] = formattedTemperatureObject), acc;
+          },
+          {}
+        );
+        if (selectedCardDt) {
           dispatch({
-            type: statusEnum.SUCCESS,
-          });
-        } else {
-          dispatch({
-            type: statusEnum.FAIL,
+            type: fillDataEnum.FILL_TEMP,
+            payload: {
+              weatherDictionary,
+              selectedCardDt,
+            },
           });
         }
-      } catch (error) {
-        console.log(error);
+
+        // status - SUCCESS
+        dispatch({
+          type: statusEnum.SUCCESS,
+        });
+      } else {
         dispatch({
           type: statusEnum.FAIL,
         });
       }
-    } catch (e) {
-      console.log(e);
+    } catch (error) {
+      console.log(error);
+      dispatch({
+        type: statusEnum.FAIL,
+      });
     }
   };
 
